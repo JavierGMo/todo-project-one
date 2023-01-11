@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { GreenText } from './components/Texts/GreenText';
 
 function App() {
+  const objHola = {
+    id: 1,
+    body: "dajsdjkal"
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GreenText
+        count={0}
+        objHola={objHola}
+      />
     </div>
   );
 }
