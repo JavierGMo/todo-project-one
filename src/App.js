@@ -1,18 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import { GreenText } from './components/Texts/GreenText';
 
 function App() {
-  const objHola = {
-    id: 1,
-    body: "dajsdjkal"
+  const [count, setCount] = useState(1000);
+  const handleAddNumber = (e) => {
+    setCount(count+1);
   };
   return (
     <div className="App">
-      <GreenText
-        count={0}
-        objHola={objHola}
-      />
+      <p>{ count }</p>
+      <button
+        onClick={handleAddNumber}
+      >+</button>
     </div>
   );
 }
