@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 export function GreenText({
     objHola,
     textGreen="Hola mundo",
-    count
+    count,
+    children//Codigo de react: etiquetas de html
 }) {
     console.log(objHola);
     return (
@@ -11,6 +12,7 @@ export function GreenText({
             background: "green"
         }}>
             <p>{textGreen} - {count}</p>
+            { children }
         </div>
     );
 }
