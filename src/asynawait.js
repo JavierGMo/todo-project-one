@@ -16,3 +16,16 @@ async function funAsyn(params) {
 }
 
 funAsyn().catch(e=>console.error(e));
+
+
+
+/*modules.export = Object
+modules.export = {
+    SomeObject,
+    AnyObject,
+}
+=
+
+export function SomeObkect(params) {
+    
+}*/
