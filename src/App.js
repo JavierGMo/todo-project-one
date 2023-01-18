@@ -1,12 +1,24 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
+import { GreenText } from './components/Texts/GreenText'
 import './App.css';
 
+function HolaNombre(name){
+  return `Hola ${name}`;
+}
 
+function sort(numero) {
+  const arr = [12, 129, 1, 0, 65, 13];
+  arr.push(numero);
+  const sortArr = arr.sort();
+  return sortArr;
+}
 
 function App() {
   console.log("APP hola");
+  const [name, setName] = useState("Javier");
   const [count, setCount] = useState(1000);
   const fisrtRef = useRef();
+  const valueMemo = useMemo(()=>sort(count), [count]);
   /*const handleUseCallback = useCallback(()=>{
     sortAnything(count);
   }, [count]);*/
@@ -23,7 +35,16 @@ function App() {
   }, [count]);*/
   return (
     <div className="App">
-      <p>{ count }</p>
+      {/* <p>{ count }</p> */}
+      {/* <p>Mensaje: { valueMemo }</p> */}
+      <div>
+        {
+          valueMemo.map((item, index)=>(
+            <p key={index} >item: {item}</p>
+          ))
+        }
+        <p>Hola</p>
+      </div>
       <input ref={fisrtRef} placeholder="Soy un input" />
       <button
         onClick={handleAddNumber}
